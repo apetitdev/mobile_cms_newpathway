@@ -1,0 +1,29 @@
+<ion-view view-title="Customers">
+  <ion-content ng-init='fetchCustomer()' class='main-content'>
+    <h1>Customer list</h1>
+    <ion-list>
+    <!-- {{schools}} -->
+    	<table class='table'>
+    		<tr class='headertable'>
+    			<th>Customer Chinese name</th>
+    			<th>Customer  English Name</th>
+    			<th>Birthday</th>
+    			<th>Age</th>
+    			<th>Sex</th>
+                <th>Degree</th>
+                <th>Nationality</th>
+                <th>Province</th>
+    		</tr>
+	    	<tr ng-repeat='customer in customers track by $index '>
+		    	<td>{{customer.CUST_CnName}}</td>
+		    	<td>{{customer.CUST_EnName}}</td>
+		    	<td>{{customer.CUST_Birthday}}</td>
+		    	<td>{{customer.CUST_Age}}</td>
+		    	<td>{{customer.CUST_Sex}}</td>
+		    	<td>{{customer.CUST_Degree}}</td>
+		    	<td>{{customer.CUST_Nationality}}</td>
+		    	<td>{{customer.CUST_Province}}</td>
+		    </tr>
+	    </table>
+	</ion-list>
+  </ion-content>

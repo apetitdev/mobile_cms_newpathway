@@ -1,0 +1,30 @@
+<ion-view view-title="Schools">
+  <ion-content ng-init='fetchSchool()' class='main-content'>
+    <h1>Schools list</h1>
+    <ion-list>
+    <!-- {{schools}} -->
+    	<table class='table'>
+    		<tr class='headertable'>
+    			<th>School english name</th>
+    			<th>School Chinese Name</th>
+    			<th>logo</th>
+    			<th>city</th>
+                <th>Address</th>
+    			<th>Country</th>
+    			<th>Edit</th>
+                <th>Remove</th>
+    		</tr>
+	    	<tr ng-repeat='school in schools track by $index '>
+		    	<td style='max-width:300px;'>{{school.english_name}}</td>
+		    	<td style='max-width:300px;'>{{school.chinese_name}}</td>
+		    	<td ng-if='school.logo !== "Not communicated"'><img ng-src='{{school.logo}}' /></td>
+                <td ng-if='school.logo == "Not communicated"'>{{school.logo}}</td>
+		    	<td>{{school.city}}</td>
+                <td>{{school.address}}</td>
+		    	<td>{{school.country.country_id}}</td>
+		    	<td><a href='#' class='btn btn-sm btn-warning'> Edit</a></td>
+                <td><a href='#' class='btn btn-sm btn-danger'> Remove</a></td>
+		    </tr>
+	    </table>
+	</ion-list>
+  </ion-content>
